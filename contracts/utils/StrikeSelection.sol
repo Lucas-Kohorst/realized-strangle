@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+// thanks to https://github.com/ribbon-finance/ribbon-v2/blob/ae2e87f4db1d5af3e4dfacbce6f8250f44de216d/contracts/utils/StrikeSelection.sol
 pragma solidity ^0.7.6;
 pragma experimental ABIEncoderV2;
 
