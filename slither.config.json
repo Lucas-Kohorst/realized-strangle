@@ -1,0 +1,5 @@
+{
+  "exclude_informational": true,
+  "exclude_low": true,
+  "solc_disable_warnings": false
+}
