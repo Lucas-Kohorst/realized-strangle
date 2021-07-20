@@ -1,4 +1,4 @@
-aiohttp==3.7.4.post0
+aiohttp>=3.7.4
 apipkg==1.5
 appnope==0.1.2
 argon2-cffi==20.1.0
@@ -138,13 +138,13 @@ txaio==21.2.1
 typing-extensions==3.7.4.3
 tzlocal==2.1
 uritemplate==3.0.1
-urllib3==1.26.4
+urllib3>=1.26.5
 varint==1.0.2
 wcwidth==0.2.5
 web3==5.18.0
 webencodings==0.5.1
 websocket-client==0.58.0
-websockets==8.1
+websockets>=9.1
 Werkzeug==1.0.1
 widgetsnbextension==3.5.1
 xxhash==2.0.2
