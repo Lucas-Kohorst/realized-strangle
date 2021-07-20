@@ -1,0 +1,19 @@
+{
+    "name": "realized-vol",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "lint": "prettier --list-different **/*.sol",
+        "lint:check": "prettier --check **/*.sol",
+        "lint:fix": "prettier --write **/*.sol"
+    },
+    "dependencies": {
+        "prettier": "^2.2.1",
+        "prettier-plugin-solidity": "^1.0.0-beta.10",
+        "solhint-plugin-prettier": "0.0.5"
+    },
+    "devDependencies": {
+        "@uniswap/sdk-core": "^3.0.0",
+        "@uniswap/v3-sdk": "^3.2.1"
+    }
+}

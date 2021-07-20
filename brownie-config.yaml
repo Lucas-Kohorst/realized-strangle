@@ -1,0 +1,24 @@
+
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
+  - Uniswap/uniswap-v3-core@1.0.0
+  - Uniswap/uniswap-v3-periphery@1.0.0
+
+autofetch_sources: true
+
+compiler:
+  solc:
+    version: 0.7.6
+    remappings:
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0"
+      - "@uniswap/v3-core=Uniswap/uniswap-v3-core@1.0.0"
+      - "@uniswap/v3-periphery=Uniswap/uniswap-v3-periphery@1.0.0"
+
+# use Ganache's forked mainnet mode as the default network
+# NOTE: You don't *have* to do this, but it is often helpful for testing
+networks:
+  default: mainnet-fork
+  mainnet-fork:
+      cmd_settings:
+          unlock:
+              - 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
