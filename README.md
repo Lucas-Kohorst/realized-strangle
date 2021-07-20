@@ -3,6 +3,16 @@ Open a perpetual strangle (selling a put at a lower strike and a call at a highe
 
 This repository contains the smart contracts from the [Alpha Vaults](https://alpha.charm.fi/) protocol and leverages [ribbon.finanace rvol](https://github.com/ribbon-finance/rvol).
 
+### TODO 
+- [ ] Add Testing 
+- [ ] Emit rebalance events
+
+### Recomended Reading
+- [Uniswap V3 LP Tokens as Perpetual Put and Call Options](https://lambert-guillaume.medium.com/uniswap-v3-lp-tokens-as-perpetual-put-and-call-options-5b66219db827)
+- [Synthetic Options and Short Calls in Uniswap V3](https://lambert-guillaume.medium.com/synthetic-options-and-short-calls-in-uniswap-v3-a3aea5e4e273)
+- [Rebalancing vs Passive strategies for Uniswap V3 liquidity pools](https://medium.com/@DeFiScientist/rebalancing-vs-passive-strategies-for-uniswap-v3-liquidity-pools-754f033bdabc)
+- [Uniswap V3: A Quant Framework to model yield farming returns](https://medium.com/@DeFiScientist/uniswap-v3-a-quant-framework-to-model-yield-farming-returns-941a1600425e)
+
 ### Usage
 
 Before compiling, run below. The uniswap-v3-periphery package has to be cloned
@@ -21,11 +31,6 @@ To deploy, modify the parameters in `scripts/deploy_mainnet.py` and run:
 To trigger a rebalance, run:
 
 `brownie run rebalance`
-
-### TODO 
-- [ ] Add Testing 
-- [ ] Emit rebalance events
-- [ ] Slither and SolCover
 
 ### Testing
 
