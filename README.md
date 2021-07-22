@@ -29,6 +29,9 @@ Run tests
 
 `brownie test`
 
+Run tests with with coveragee
+`brownie test -s --coverage`
+
 To deploy, modify the parameters in `scripts/deploy_mainnet.py` and run:
 
 `brownie run deploy_mainnet`
