@@ -72,7 +72,7 @@ def main():
     ## deploy strategy
     print(
         f"""
-        Vault Strategy Parameters
+        RealVol Strategy Parameters
         RealVolStrategy:  {RealVolStrategy}
         Vault:  {vault}
         BASE_THRESHOLD: '{BASE_THRESHOLD}'
@@ -81,6 +81,8 @@ def main():
         MIN_TICK_MOVE: '{MIN_TICK_MOVE}'
         MAX_TWAP_DEVIATION: '{MAX_TWAP_DEVIATION}'
         KEEPER: '{KEEPER}',
+        OPTIONS_PREMIUM_PRICER: '{OPTIONS_PREMIUM_PRICER}',
+        STRIKE_SELECTION: '{STRIKE_SELECTION}'
     """
     )
 
@@ -97,8 +99,6 @@ def main():
         KEEPER,
         OPTIONS_PREMIUM_PRICER,
         STRIKE_SELECTION,
-        DELTA, 
-        STEP,
         gas_price=gas_strategy,
     )   
 

@@ -33,8 +33,8 @@ contract RealVolStrategy {
     int24 public lastTick;
 
     address public optionsPremiumPricer;
-    uint256 public delta;
-    uint256 public step;
+    uint256 public put_delta;
+    uint256 public call_delta;
     uint256 public expiration = block.timestamp + 1 weeks;
 
     /**
@@ -53,9 +53,7 @@ contract RealVolStrategy {
         uint32 _twapDuration,
         address _keeper, 
         address _optionsPremiumPricer,
-        address _strikeSelection,
-        uint256 _delta,
-        uint256 _step
+        address _strikeSelection
     ) {
         strikeSelection = IStrikeSelection(_strikeSelection);
         IUniswapV3Pool _pool = AlphaVault(_vault).pool();
@@ -72,8 +70,6 @@ contract RealVolStrategy {
         keeper = _keeper;   
 
         optionsPremiumPricer = _optionsPremiumPricer;
-        delta = _delta;
-        step = _step;
 
         _checkThreshold(_baseThreshold, _tickSpacing);
         _checkThreshold(_limitThreshold, _tickSpacing);
@@ -157,6 +153,7 @@ contract RealVolStrategy {
     function _getStrikePriceAsTicks(bool isPut) internal view returns (uint256, int24, uint256, uint256, uint) {
         (uint256 strikePrice, uint256 strikePriceDelta) = strikeSelection.getStrikePrice(expiration, isPut);
 
+        // @todo make sure this is calculated properly
         uint sqrtStrikePrice = SqrtMath.sqrt(strikePrice / 1); // for pools like ETH:USDT this works
         int24 tick = TickMath.getTickAtSqrtRatio(uint160(strikePrice)*1e22);
         return (expiration, tick, strikePrice, strikePriceDelta, sqrtStrikePrice);

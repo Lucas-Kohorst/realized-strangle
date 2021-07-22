@@ -5,6 +5,11 @@ This repository contains the smart contracts from the [Alpha Vaults](https://alp
 
 ### TODO 
 - [ ] Add Testing 
+  - [ ] Strike Price
+  - [ ] Deploy Vault
+  - [ ] Deploy Strategy
+  - [ ] Simulations
+  - [ ] Rebalance
 - [ ] Emit rebalance events
 
 ### Recomended Reading
@@ -97,7 +102,7 @@ tickFloor - real.baseThreshold() # lower
 tickCeil + real.baseThreshold()  # upper
 
 # getting ticks
-(put,tick, put_strike, put_expiry) = real.getPutStrikePriceAsTicks() 
+(put_tick, put_strike, put_expiry) = real.getPutStrikePriceAsTicks() 
 lowerThreshold = put_tick # lower
 (call_tick, call_strike, call_expiry) = real.getCallStrikePriceAsTicks()
 upper_threshold = call_tick # upper
@@ -105,3 +110,13 @@ upper_threshold = call_tick # upper
 ## testing a rebalance
 real.rebalance({'from': '0xd8da6bf26964af9d7eed9e03e53415d37aa96045'}) # w/ the keeper addr for now unlocked in brownie-config.yaml
 ```
+
+## Converting sqrtPriceX96 to spot price 
+from [https://discord.com/channels/597638925346930701/823968973753810945/849542438745014282](https://discord.com/channels/597638925346930701/823968973753810945/849542438745014282)
+
+```
+1 / (( real.getPrice()/pow(2,96) ) / pow(10,6) )**2
+>> 1987.0467456825836
+```
+
+Knowing what the spot price is from the sqrtPriceX96 is helpful for testing since the strikes of the calls and puts are not given in a sqrtPriceX96 format.
