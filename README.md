@@ -5,9 +5,10 @@ This repository contains the smart contracts from the [Alpha Vaults](https://alp
 
 ### TODO 
 - [ ] Add Testing 
-  - [ ] Strike Price
-  - [ ] Deploy Vault
-  - [ ] Deploy Strategy
+  - [x] Strike Price
+  - [x] Deploy Vault
+  - [x] Deploy Strategy
+  - [ ] Strategy Parameters
   - [ ] Simulations
   - [ ] Rebalance
 - [ ] Emit rebalance events
@@ -105,9 +106,9 @@ tickFloor - real.baseThreshold() # lower
 tickCeil + real.baseThreshold()  # upper
 
 # getting ticks
-(put_tick, put_strike, put_expiry) = real.getPutStrikePriceAsTicks() 
+(put_tick, put_strike, put_delta) = real.getPutStrikePriceAsTicks() 
 lowerThreshold = put_tick # lower
-(call_tick, call_strike, call_expiry) = real.getCallStrikePriceAsTicks()
+(call_tick, call_strike, call_delta) = real.getCallStrikePriceAsTicks()
 upper_threshold = call_tick # upper
 
 ## testing a rebalance

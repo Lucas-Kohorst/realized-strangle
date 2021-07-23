@@ -1,9 +1,7 @@
 from brownie.test import given, strategy
 from math import sqrt
 
-
 EPS = 1e-9
-
 
 @given(
     lower=strategy("uint256", min_value=1, max_value=999),
